@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Posts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #e9ecef; /* Light background for a modern look */
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+        .quote {
+            font-size: 24px;
+            color: #6c757d;
+            margin: 20px 0;
+            font-style: italic;
+            border-left: 4px solid #28a745; /* Stylish border */
+            padding-left: 15px; /* Padding for aesthetics */
+            display: inline-block; /* Center the quote */
+        }
+        .content {
+            margin: 20px 0;
+            padding: 20px;
+            background: #fff; /* White background for contrast */
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* Deeper shadow for depth */
+        }
+        .button {
+            display: inline-block;
+            margin: 10px 0;
+            padding: 10px 15px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+        .create-post-btn {
+            background-color: #28a745; /* Light green */
+        }
+        .contact-btn {
+            background-color: #b81717; /* Teal color */
+        }
+        .history-btn {
+            background-color: #37bfce; /* Yellowish green */
+        }
+        .button:hover {
+            opacity: 0.8; /* Slightly darker on hover */
+        }
+        .post {
+            max-width: 800px; /* Wider post container */
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff; /* White background for posts */
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* Enhanced shadow */
+        }
+        .post-title {
+            font-size: 28px; /* Larger title font */
+            margin-bottom: 10px;
+            color: #007bff; /* Bootstrap primary color */
+        }
+        .post-content {
+            font-size: 18px; /* Increased content font size */
+            line-height: 1.8; /* Better line height for readability */
+            color: #495057; /* Slightly lighter text color */
+        }
+        footer {
+            margin-top: 40px;
+            padding: 10px 0;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Our Blog!</h1>
+    <p>Your source of inspiration, insights, and community-driven discussions.</p>    
+    
+    <div class="quote">"The only limit to our realization of tomorrow will be our doubts of today."</div>
+    
+    <div class="content">
+        <h2>About Our Blog</h2>
+        <p>This blog is a space for sharing ideas, insights, and stories that inspire and inform. We believe in the power of words to create change and foster community.</p>
+    </div>
+
+    <h2>Recent Posts</h2>
+    <a href="{{ url_for('create_post') }}" class="button create-post-btn">Create New Post</a>
+    <a href="{{ url_for('contact') }}" class="button contact-btn">Contact Us</a>
+    <a href="{{ url_for('post_history') }}" class="button history-btn">View Post Submission History</a> <!-- New Button -->
+    
+    {% for post in posts %}
+        <div class="post">
+            <div class="post-title">{{ post.title }}</div>
+            <div class="post-content">{{ post.content }}</div>
+        </div>
+    {% endfor %}
+    
+    <footer>
+        <p>For any queries, please feel free to contact us.</p>
+        <p>~Created by Shivam Upadhyay</p> <!-- Added Creator Info -->
+    </footer>
+</body>
+</html>
+
+

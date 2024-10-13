@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Create a New Post</h2>
+  <form method="POST">
+    <div>
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" required>
+    </div>
+    <div>
+      <label for="content">Content:</label>
+      <textarea id="content" name="content" rows="8" required></textarea>
+    </div>
+    <button type="submit" class="submit-btn">Submit</button>
+  </form>
+  <a href="{{ url_for('home') }}">Back to Posts</a>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4; /* Light background color */
+      margin: 0;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+      color: #333; /* Dark text color */
+    }
+    form {
+      width: 500px; /* Set equal width */
+      height: 300px; /* Set equal height for square shape */
+      margin: 20px auto; /* Center the form */
+      padding: 20px;
+      background: #fff; /* White background for the form */
+      border-radius: 5px; /* Rounded corners */
+      box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Subtle shadow */
+    }
+    label {
+      display: block; /* Block level for labels */
+      margin-bottom: 5px; /* Space below labels */
+    }
+    input, textarea {
+      width: calc(100% - 20px); /* Full width inputs with padding adjustment */
+      padding: 10px; /* Inner padding */
+      margin-bottom: 15px; /* Space below inputs */
+      border: 1px solid #ccc; /* Border color */
+      border-radius: 4px; /* Rounded corners */
+    }
+    .submit-btn {
+      background-color: #28a745; /* Green color */
+      color: white; /* White text */
+      padding: 10px 20px; /* Inner padding */
+      border: none; /* No border */
+      border-radius: 5px; /* Rounded corners */
+      display: block; /* Make button a block element */
+      margin: 20px auto; /* Center button */
+      cursor: pointer; /* Pointer cursor on hover */
+      font-size: 16px; /* Font size */
+    }
+    .submit-btn:hover {
+      background-color: #218838; /* Darker green on hover */
+    }
+  </style>
+{% endblock %}

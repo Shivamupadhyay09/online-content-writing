@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: Online Content Writing
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app" # assuming your Flask app is in `app.py`

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Content Writing</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center align everything */
+        margin: 0;
+        padding: 0;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between; /* Space between elements */
+        width: 100%; /* Full width */
+        padding: 20px; /* Add some padding */
+        max-width: 1200px; /* Optional max-width */
+      }
+      .logo {
+        margin-left: auto; /* Push logo to the right */
+      }
+      .logo img {
+        width: 300px; /* Set logo width */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Online Content Writing</h1>
+      <div class="logo">
+        <img src="{{ url_for('static', filename='images/content_writing.jpg') }}" alt="Content Writing Logo"/>
+      </div>
+    </div>
+    {% block content %}{% endblock %}
+  </body>
+</html>
+<footer>
+  <div class="contact-message">
+    For any queries, please feel free to <a href="{{ url_for('contact') }}">contact us</a>.
+</div>
+</body>
+</html>
+                  <p>Thank you for visiting.</p>
+</footer>
